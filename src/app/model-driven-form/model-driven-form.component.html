@@ -1,0 +1,46 @@
+<div class="container">
+<form class="form-horizontal" [formGroup]='regForm' (ngSubmit)='submit(regForm.value)'>
+    <div class="form-group">
+  <label for="">Full Name</label>
+  <input type="text" formControlName="fullName">
+  </div>
+  <div class="form-group">
+  <label for="">Date Of Birth</label>
+  <input type="date" formControlName="dateOfBirth">
+  </div>
+  <div class="form-group">
+  <label for="">Gender</label>
+  <input type="radio" name="gender" value='M' formControlName="gender">Male
+  <input type="radio" name="gender" value='F' formControlName="gender">Female
+  
+  </div>
+  <div class="form-group">
+      <label for="">Department</label>
+  <select name="department" formControlName="department">
+    <option>Select a department</option>
+<option *ngFor="let dep of depart" value={{dep}}>{{dep}}</option>
+    </select>
+    </div>
+    <div class="form-group">
+  <label for="">College</label>
+  <input type="" formControlName="college">
+  </div>
+  <div class="form-group">
+  <label for="">City</label>
+  <input type="" formControlName="city">
+  </div>
+  
+  <fieldset formGroupName="contactNo">
+      <div class="form-group">
+  <label for="">Mobile Number</label>
+  <input type="" formControlName="mobileNo">
+  </div>
+  <div class="form-group">
+  <label for="">Landline Number</label>
+  <input type="" formControlName="landLine">
+  </div>
+  
+</fieldset>
+<input type="submit" value='submit'>
+</form>
+</div>
